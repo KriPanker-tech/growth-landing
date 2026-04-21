@@ -3,9 +3,9 @@ import { landing } from '../content/landing';
 ---
 
 <section class="section-shell breakdown">
-  <div data-reveal>
+  <div>
     <p class="eyebrow">Не симптом, а причина</p>
-    <h2>{landing.breakdown.title}</h2>
+    <h2 data-text-reveal>{landing.breakdown.title}</h2>
     <p>{landing.breakdown.intro}</p>
     <div class="request-list">
       {landing.breakdown.requests.map((item) => <span>{item}</span>)}
