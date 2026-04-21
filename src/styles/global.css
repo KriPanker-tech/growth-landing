@@ -90,9 +90,9 @@ h3 {
 }
 
 h1 {
-  max-width: 880px;
+  max-width: 780px;
   margin-bottom: 28px;
-  font-size: clamp(46px, 7vw, 94px);
+  font-size: clamp(38px, 5.8vw, 78px);
 }
 
 h2 {
@@ -145,6 +145,19 @@ h3 {
 .button-primary:hover,
 .button-secondary:hover {
   transform: translateY(-2px);
+}
+
+[data-reveal] {
+  transform: translateY(22px);
+  opacity: 0;
+  transition:
+    opacity 620ms ease,
+    transform 620ms ease;
+}
+
+[data-reveal].is-visible {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .hero {
@@ -273,6 +286,40 @@ h3 {
   padding: 22px;
   box-shadow: 0 12px 32px rgb(32 35 31 / 7%);
   font-weight: 700;
+}
+
+.situation-grid article,
+.format-card,
+.scope-card,
+.scenario-card,
+.fit-list p,
+.artifact-strip span,
+.interactive-card,
+.diagnostic-board,
+.change-table {
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease;
+}
+
+.situation-grid article:hover,
+.format-card:hover,
+.scope-card:hover,
+.scenario-card:hover,
+.fit-list p:hover,
+.artifact-strip span:hover,
+.interactive-card:hover {
+  transform: translateY(-6px);
+  border-color: rgb(15 118 110 / 45%);
+  box-shadow: 0 22px 52px rgb(32 35 31 / 14%);
+}
+
+.diagnostic-board:hover,
+.change-table:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 28px 76px rgb(32 35 31 / 15%);
 }
 
 .breakdown {
@@ -543,7 +590,7 @@ h3 {
   }
 
   h1 {
-    font-size: 44px;
+    font-size: 38px;
   }
 
   h2 {
@@ -602,5 +649,21 @@ h3 {
 
   .cause-panel p {
     font-size: 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  [data-reveal] {
+    transform: none;
+    opacity: 1;
   }
 }

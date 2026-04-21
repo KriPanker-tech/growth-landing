@@ -3,7 +3,7 @@ import { landing } from '../content/landing';
 ---
 
 <section class="section-shell breakdown">
-  <div>
+  <div data-reveal>
     <p class="eyebrow">Не симптом, а причина</p>
     <h2>{landing.breakdown.title}</h2>
     <p>{landing.breakdown.intro}</p>
@@ -11,7 +11,7 @@ import { landing } from '../content/landing';
       {landing.breakdown.requests.map((item) => <span>{item}</span>)}
     </div>
   </div>
-  <div class="cause-panel">
+  <div class="cause-panel interactive-card">
     <span>{landing.breakdown.realProblemTitle}</span>
     <p>{landing.breakdown.realProblem}</p>
     <strong>{landing.breakdown.closing}</strong>
