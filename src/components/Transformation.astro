@@ -21,4 +21,20 @@ import SectionHeader from './SectionHeader.astro';
       ))
     }
   </div>
+  <div class="change-mobile" aria-label={`${landing.changes.title}: мобильный вид`}>
+    <div class="change-mobile-group">
+      <h3>Было</h3>
+      {landing.changes.rows.map((row) => <p>{row.before}</p>)}
+    </div>
+    <div class="change-mobile-group">
+      <h3>Стало</h3>
+      {
+        landing.changes.rows.map((row) => (
+          <p>
+            <strong>{row.afterTitle}:</strong> {row.after}
+          </p>
+        ))
+      }
+    </div>
+  </div>
 </section>
