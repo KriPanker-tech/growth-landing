@@ -34,6 +34,9 @@ jobs:
         run: npm ci
 
       - name: Build
+        env:
+          PUBLIC_YANDEX_METRIKA_ID: ${{ vars.YANDEX_METRIKA_ID }}
+          PUBLIC_GA_MEASUREMENT_ID: ${{ vars.GA_MEASUREMENT_ID }}
         run: npm run build
 
       - name: Upload artifact

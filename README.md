@@ -28,3 +28,14 @@ npm run preview
 Workflow `.github/workflows/deploy.yml` собирает сайт и публикует `dist/` в GitHub Pages после push в ветку `main`.
 
 Для первого запуска в настройках репозитория на GitHub нужно выбрать `Settings -> Pages -> Source -> GitHub Actions`.
+
+## Метрики
+
+Метрики подключаются только если задан ID счетчика.
+
+В GitHub: `Settings -> Secrets and variables -> Actions -> Variables`.
+
+- `YANDEX_METRIKA_ID` — ID счетчика Яндекс.Метрики.
+- `GA_MEASUREMENT_ID` — ID потока Google Analytics, если нужен GA4.
+
+Если переменные пустые, сторонние скрипты метрик не загружаются.
