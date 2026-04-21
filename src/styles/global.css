@@ -285,12 +285,24 @@ h3 {
 }
 
 .situation-grid article {
+  position: relative;
   min-height: 180px;
   border-top: 4px solid var(--accent);
   background: var(--paper);
-  padding: 22px;
+  padding: 34px 30px 30px 56px;
   box-shadow: 0 12px 32px rgb(32 35 31 / 7%);
+  font-size: clamp(22px, 2.1vw, 30px);
   font-weight: 700;
+  line-height: 1.2;
+}
+
+.situation-grid article::before {
+  position: absolute;
+  top: 40px;
+  left: 28px;
+  color: var(--accent-dark);
+  content: "—";
+  font-weight: 850;
 }
 
 .situation-grid article,
@@ -427,8 +439,19 @@ h3 {
 .scenario-card {
   border: 1px solid var(--line);
   background: var(--paper);
-  padding: 30px;
+  padding: 46px;
   box-shadow: 0 12px 34px rgb(32 35 31 / 7%);
+}
+
+.format-card h3,
+.scope-card h3,
+.scenario-card h3 {
+  margin-bottom: 22px;
+}
+
+.format-card h3 + p,
+.scope-card h3 + ul {
+  margin-top: 0;
 }
 
 .format-card span,
@@ -588,6 +611,18 @@ h3 {
   }
 }
 
+@media (max-width: 700px) {
+  .table-head,
+  .change-row {
+    grid-template-columns: 1fr;
+  }
+
+  .change-row p:first-child {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
 @media (max-width: 720px) {
   .section-shell {
     width: min(100% - 24px, 1120px);
@@ -636,15 +671,31 @@ h3 {
   .format-grid,
   .scope-grid,
   .scenario-grid,
-  .artifact-strip,
-  .table-head,
-  .change-row {
+  .artifact-strip {
     grid-template-columns: 1fr;
   }
 
-  .change-row p:first-child {
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
+  .situation-grid article {
+    min-height: 132px;
+    padding: 28px 24px 26px 50px;
+    font-size: 24px;
+  }
+
+  .situation-grid article::before {
+    top: 30px;
+    left: 24px;
+  }
+
+  .format-card,
+  .scope-card,
+  .scenario-card {
+    padding: 34px;
+  }
+
+  .format-card h3,
+  .scope-card h3,
+  .scenario-card h3 {
+    margin-bottom: 18px;
   }
 
   .cause-panel,
