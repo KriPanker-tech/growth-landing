@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breakdown from '../components/Breakdown.astro';
+import FinalCta from '../components/FinalCta.astro';
+import Fit from '../components/Fit.astro';
+import Formats from '../components/Formats.astro';
+import Hero from '../components/Hero.astro';
+import Scenarios from '../components/Scenarios.astro';
+import Situations from '../components/Situations.astro';
+import Transformation from '../components/Transformation.astro';
+import WorkScope from '../components/WorkScope.astro';
+import { landing } from '../content/landing';
+---
+
+<BaseLayout title={landing.meta.title} description={landing.meta.description}>
+  <main>
+    <Hero />
+    <Situations />
+    <Breakdown />
+    <Transformation />
+    <Formats />
+    <WorkScope />
+    <Scenarios />
+    <Fit />
+    <FinalCta />
+  </main>
+</BaseLayout>

@@ -1,0 +1,24 @@
+---
+import { landing } from '../content/landing';
+import SectionHeader from './SectionHeader.astro';
+---
+
+<section class="section-shell">
+  <SectionHeader eyebrow="Было / стало" title={landing.changes.title} />
+  <div class="change-table" role="table" aria-label={landing.changes.title}>
+    <div class="table-head" role="row">
+      <span role="columnheader">Было</span>
+      <span role="columnheader">Стало</span>
+    </div>
+    {
+      landing.changes.rows.map((row) => (
+        <div class="change-row" role="row">
+          <p role="cell">{row.before}</p>
+          <p role="cell">
+            <strong>{row.afterTitle}:</strong> {row.after}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</section>

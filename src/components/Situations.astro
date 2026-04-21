@@ -1,0 +1,11 @@
+---
+import { landing } from '../content/landing';
+import SectionHeader from './SectionHeader.astro';
+---
+
+<section class="section-shell">
+  <SectionHeader title={landing.situations.title} text={landing.situations.text} />
+  <div class="situation-grid">
+    {landing.situations.items.map((item) => <article>{item}</article>)}
+  </div>
+</section>

@@ -1,0 +1,26 @@
+---
+import { landing } from '../content/landing';
+import SectionHeader from './SectionHeader.astro';
+---
+
+<section class="section-shell">
+  <SectionHeader title={landing.scope.title} />
+  <div class="scope-grid">
+    {
+      landing.scope.groups.map((group) => (
+        <article class="scope-card">
+          <h3>{group.title}</h3>
+          <ul>
+            {group.items.map((item) => <li>{item}</li>)}
+          </ul>
+        </article>
+      ))
+    }
+  </div>
+  <div class="artifact-strip">
+    <span>{landing.placeholders.artifact}: сегменты</span>
+    <span>{landing.placeholders.artifact}: оффер</span>
+    <span>{landing.placeholders.artifact}: воронка</span>
+    <span>{landing.placeholders.artifact}: sales materials</span>
+  </div>
+</section>

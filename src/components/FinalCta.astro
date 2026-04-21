@@ -1,0 +1,15 @@
+---
+import { landing } from '../content/landing';
+---
+
+<section class="section-shell final-cta">
+  <div>
+    <p class="eyebrow">Первый шаг</p>
+    <h2>{landing.final.title}</h2>
+    <p>{landing.final.text}</p>
+  </div>
+  <div class="final-action">
+    <a class="button-primary" href={landing.cta.href}>{landing.cta.finalLabel}</a>
+    <span>{landing.final.note}</span>
+  </div>
+</section>

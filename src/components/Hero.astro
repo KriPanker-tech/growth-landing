@@ -1,0 +1,31 @@
+---
+import { landing } from '../content/landing';
+---
+
+<section class="hero section-shell">
+  <div class="hero-copy">
+    <p class="eyebrow">{landing.hero.eyebrow}</p>
+    <h1>{landing.hero.title}</h1>
+    <p class="hero-lead">{landing.hero.lead}</p>
+    <p class="hero-sublead">{landing.hero.sublead}</p>
+    <div class="hero-actions">
+      <a class="button-primary" href={landing.cta.href}>{landing.cta.label}</a>
+      <span>{landing.cta.note}</span>
+    </div>
+  </div>
+  <div class="diagnostic-board" aria-label="Схема диагностики роста">
+    <div class="portrait-placeholder">{landing.placeholders.portrait}</div>
+    <div class="board-card board-card-main">
+      <span>Диагностика</span>
+      <strong>Где рвется путь до сделки</strong>
+    </div>
+    {
+      landing.hero.takeaways.map((item, index) => (
+        <div class={`board-card board-card-${index + 1}`}>
+          <small>0{index + 1}</small>
+          <p>{item}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

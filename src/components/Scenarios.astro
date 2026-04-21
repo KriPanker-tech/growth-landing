@@ -1,0 +1,23 @@
+---
+import { landing } from '../content/landing';
+import SectionHeader from './SectionHeader.astro';
+---
+
+<section class="section-shell">
+  <SectionHeader title={landing.scenarios.title} text={landing.scenarios.text} />
+  <div class="scenario-grid">
+    {
+      landing.scenarios.items.map((scenario, index) => (
+        <article class="scenario-card">
+          <span>Сценарий {index + 1}</span>
+          {scenario.map((line) => <p>{line}</p>)}
+          <small>{landing.placeholders.case}</small>
+        </article>
+      ))
+    }
+  </div>
+  <div class="inline-cta">
+    <a class="button-secondary" href={landing.cta.href}>Разобрать вашу ситуацию</a>
+    <span>{landing.placeholders.proof}</span>
+  </div>
+</section>

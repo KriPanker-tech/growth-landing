@@ -1,0 +1,19 @@
+---
+import { landing } from '../content/landing';
+import SectionHeader from './SectionHeader.astro';
+---
+
+<section class="section-shell">
+  <SectionHeader title={landing.formats.title} text={landing.formats.result} />
+  <div class="format-grid">
+    {
+      landing.formats.items.map((item) => (
+        <article class="format-card">
+          <span>{item.subtitle}</span>
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+        </article>
+      ))
+    }
+  </div>
+</section>
